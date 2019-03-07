@@ -1,0 +1,59 @@
+<policies>
+    <inbound>
+        <base />
+        <set-variable name="googleApiKey" value="<<GOOGLE_API_KEY>>"/>
+        <send-request mode="new" response-variable-name="googleZipCode" timeout="5" ignore-error="true">
+            <set-url>@($"https://maps.googleapis.com/maps/api/geocode/json?address={(string) context.Request.OriginalUrl.Query.GetValueOrDefault("zipCode")}&key={(string) context.Variables["googleApiKey"]}")</set-url>
+            <set-method>GET</set-method>
+        </send-request>
+        <set-variable name="jsonZipCodeResponse" value="@(((IResponse)context.Variables["googleZipCode"]).Body.As<JObject>())" />
+        <choose>
+            <when condition="@(((JObject)context.Variables["jsonZipCodeResponse"])["results"].Count() == 0)">
+                <return-response>
+                    <set-status code="404" reason="Zip Code not found" />
+                </return-response>
+            </when>
+            <otherwise>
+                <send-request mode="new" response-variable-name="googlePlaces" timeout="5" ignore-error="true">
+                    <set-url>@($"https://maps.googleapis.com/maps/api/place/textsearch/json?query=Craft+beer+in+{(string) context.Request.OriginalUrl.Query.GetValueOrDefault("zipCode")}&key={(string) context.Variables["googleApiKey"]}")</set-url>
+                    <set-method>GET</set-method>
+                </send-request>
+                <set-variable name="jsonPlacesResponse" value="@(((IResponse)context.Variables["googlePlaces"]).Body.As<JObject>())" />
+                <return-response response-variable-name="existing response variable">
+                    <set-status code="200" reason="OK" />
+                    <set-header name="Content-Type" exists-action="override">
+                        <value>application/json</value>
+                    </set-header>
+                    <set-body>@{
+                        if (context.Variables["jsonZipCodeResponse"] != null && context.Variables["jsonPlacesResponse"] != null) {
+                            JObject zipCodeOutput = (JObject)context.Variables["jsonZipCodeResponse"];
+                            string formattedAddress = (string) zipCodeOutput["results"][0]["formatted_address"];
+
+                            JObject placesOutput = (JObject)context.Variables["jsonPlacesResponse"];
+                            string placeName = (string) placesOutput["results"][0]["name"];
+                            string placeAddress = (string) placesOutput["results"][0]["formatted_address"];
+
+                            return new JObject(new JProperty("results",
+                                        new JObject(
+                                            new JProperty("zipCodeDescription", formattedAddress),
+                                            new JProperty("craftBeerPlace", placeName),
+                                            new JProperty("craftBeerLocation", placeAddress)
+                                        ))).ToString();
+                        } else {
+                            return "{}";
+                        }
+                    }</set-body>
+                </return-response>
+            </otherwise>
+        </choose>
+    </inbound>
+    <backend>
+        <base />
+    </backend>
+    <outbound>
+        <base />
+    </outbound>
+    <on-error>
+        <base />
+    </on-error>
+</policies>

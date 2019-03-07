@@ -1,0 +1,7 @@
+{
+    "results": {
+        "zipCodeDescription": "Milwaukee, WI 53212, USA",
+        "craftBeerPlace": "Sample Bar",
+        "craftBeerLocation": "1234 Test Ave, Milwaukee, WI 53212, USA"
+    }
+}

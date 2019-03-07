@@ -1,0 +1,26 @@
+<policies>
+    <inbound>
+        <base />
+        <set-variable name="scopeValue" value="@(context.Request.Body.As<string>(preserveContent:true).Split('&').Where(s => s.StartsWith("scope=", StringComparison.OrdinalIgnoreCase)).Select(s => s.Split('=').Skip(1).FirstOrDefault()).FirstOrDefault())" />
+        <set-variable name="productResourceValue" value="{{demoProductApplicationID}}" />
+        <set-body>@{
+            string originalRequestBody = context.Request.Body.As<string>(preserveContent: true); 
+            string scopeValue = (string) context.Variables["scopeValue"];
+            string resourceValue = "";
+            if (scopeValue == "DemoProduct") {
+                resourceValue = (string) context.Variables["productResourceValue"];
+            }
+            return originalRequestBody + "&resource=" + resourceValue;
+
+            }</set-body>
+    </inbound>
+    <backend>
+        <base />
+    </backend>
+    <outbound>
+        <base />
+    </outbound>
+    <on-error>
+        <base />
+    </on-error>
+</policies>

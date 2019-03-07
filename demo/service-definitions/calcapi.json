@@ -1,0 +1,130 @@
+{
+  "swaggerVersion": "1.2",
+  "basePath": "http://calcapi.cloudapp.net/api",
+  "apis": [
+    {
+      "path": "add?a={a}&b={b}",
+      "description": "Integer addition.",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "Produces a sum of two numbers.",
+          "integer": "string",
+          "nickname": "Add two integers",
+          "parameters": [
+            {
+              "name": "a",
+              "description": "First operand. Default value is <code>51</code>.",
+              "required": true,
+              "type": "integer",
+              "paramType": "query",
+              "defaultValue": 51
+            },
+            {
+              "name": "b",
+              "description": "Second operand. Default value is <code>49</code>.",
+              "required": true,
+              "type": "integer",
+              "paramType": "query",
+              "defaultValue": 49
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "sub?a={a}&b={b}",
+      "description": "Integer subtraction.",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "Produces a difference between two numbers.",
+          "integer": "string",
+          "nickname": "Subtract two integers",
+          "parameters": [
+            {
+              "name": "a",
+              "description": "First operand. Default value is <code>51</code>.",
+              "required": true,
+              "type": "integer",
+              "paramType": "query",
+              "defaultValue": 51
+            },
+            {
+              "name": "b",
+              "description": "Second operand. Default value is <code>49</code>.",
+              "required": true,
+              "type": "integer",
+              "paramType": "query",
+              "defaultValue": 49
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "mul?a={a}&b={b}",
+      "description": "Integer multiplication.",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "Produces a product of two numbers.",
+          "integer": "string",
+          "nickname": "Multiply two integers",
+          "parameters": [
+            {
+              "name": "a",
+              "description": "First operand. Default value is <code>51</code>.",
+              "required": true,
+              "type": "integer",
+              "paramType": "query",
+              "defaultValue": 51
+            },
+            {
+              "name": "b",
+              "description": "Second operand. Default value is <code>49</code>.",
+              "required": true,
+              "type": "integer",
+              "paramType": "query",
+              "defaultValue": 49
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "div?a={a}&b={b}",
+      "description": "Integer division.",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "Produces a quotient of two numbers.",
+          "integer": "string",
+          "nickname": "Divide two integers",
+          "parameters": [
+            {
+              "name": "a",
+              "description": "First operand. Default value is <code>51</code>.",
+              "required": true,
+              "type": "integer",
+              "paramType": "query",
+              "defaultValue": 51
+            },
+            {
+              "name": "b",
+              "description": "Second operand. Default value is <code>49</code>.",
+              "required": true,
+              "type": "integer",
+              "paramType": "query",
+              "defaultValue": 49
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "info": {
+    "title": "Basic Calculator",
+    "description": "Arithmetics is just a call away!"
+  }
+}

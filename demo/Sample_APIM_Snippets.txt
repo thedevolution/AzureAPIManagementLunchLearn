@@ -1,0 +1,4 @@
+APIs
+https://raw.githubusercontent.com/Azure/api-management-samples/master/apis/httpbin.swagger.json
+http://calcapi.cloudapp.net/calcapi.json
+http://www.dneonline.com/calculator.asmx?WSDL
