@@ -175,7 +175,7 @@
 						<tr class="fragment">
 							<td colspan="2"
 								style="font-size: 18px;vertical-align: middle;text-align: right;border: 0px;">
-								<img src="https://www.enterpriseintegrationpatterns.com/img/MessageTranslator.gif" style="max-width: 350px;"/>
+								<img src="https://www.enterpriseintegrationpatterns.com/img/MessageTranslator.gif" style="max-width: 500px;"/>
 							</td>
 							<td colspan="1"
 								style="font-size: 18px;vertical-align: middle;text-align: left;border: 0px;">
@@ -187,7 +187,7 @@
 							</td>
 							<td colspan="2"
 								style="font-size: 18px;vertical-align: middle;text-align: right;border: 0px;background-color: whitesmoke;">
-								<img src="https://patterns.arcitura.com/wp-content/uploads/2018/09/fig1-68.png" style="max-width: 350px;"/>
+								<img src="https://patterns.arcitura.com/wp-content/uploads/2018/09/fig1-68.png" style="max-width: 500px;"/>
 							</td>
 						</tr>
 					</table>
@@ -238,28 +238,42 @@
 				<p>
 					<table>
 						<tr>
-							<td class="fragment" width="50%"
+							<td class="fragment" width="100%"
 								style="font-size: 18px;vertical-align: middle;text-align: center;background-color: whitesmoke;">
 								<img src="https://www.enterpriseintegrationpatterns.com/img/BroadcastAggregate.gif" />
 								<br />
 								Scatter & Gather Pattern
 							</td>
-							<td class="fragment" width="50%"
-								style="font-size: 72px;vertical-align: middle;text-align: center;">
-								<img src="./img/mr-burns-monkeys-typewriters1-640x381.jpg"
-									style="max-width: 500px;max-height: 500px;" />
+						</tr>
+					</table>
+					<aside class="notes">
+					</aside>
+			</section>
+			<section>
+				<h3>API Management Use Case, cont'd</h3>
+				<ul style="font-size: 24px;">
+					<li class="fragment">OAuth2.0
+					</li>
+					<li class="fragment">Token-based access to resources.
+						<ul>
+							<li>Can be on behalf of user or an application</li>
+						</ul>
+					</li>
+				</ul>
+				<p>
+					<table>
+						<tr>
+							<td class="fragment" width="100%"
+								style="font-size: 18px;vertical-align: middle;text-align: center;">
+								<img src="./img/447c445-client_credentials_flow.png" />
+								<br />
+								OAuth2.0 Client Credentials Flow
 							</td>
 						</tr>
 					</table>
 					<aside class="notes">
-						<ul>
-							<li>Infinite Monkey Theorem - a monkey hitting keys at random on a typewriter keyboard for an infinite amount of
-								time</li>
-							<li>1000 monkeys, 1000 typewriters looking to produce the one greatest novel known to man</li>
-						</ul>
 					</aside>
-					
-			</section>
+			</section>			
 			<section>
 				<h3>API Management Core Components</h3>
 				<ul style="font-size: 32px;">
@@ -372,43 +386,38 @@
 				</table>
 			</section>
 			<section>
-				<h3>Why Azure API Management?</h3>
-				<ul>
-					<li class="fragment"><span>It's in the Cloud!</span><span class="fragment"><br /><img
-								src="./img/oldman-cloud.jpg" /></span></li>
-					<li class="fragment">Immediate option for Azure organizations</li>
-					<li class="fragment">Easy learning curve for Azure developers
-						<ul class="fragment" style="font-size: 24px;">
-							<li>Common Azure UI/UX, Services:
-								<ul>
-									<li>Portal, Active Directory, Application Insights, Alerts, etc</li>
+				<h3>Azure API Management: Pros/Cautions</h3>
+				<table>
+					<thead>
+						<tr>
+							<th>Pros</th>
+							<th>Cautions</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="fragment" data-fragment-index="0" style="vertical-align: top;">
+								<ul style="font-size: 24px;">
+									<li>Immediate option for Azure organizations</li>
+									<li>Easy learning
+										<ul style="font-size: 24px;">
+											<li>Quickly up-and-running</li>
+											<li>Easy UI/UX</li>
+										</ul>
+									</li>
 								</ul>
-							</li>
-						</ul>
-					</li>
-				</ul>
-				<aside class="notes">
-					<ul>
-						<li>Simple to access. Sign up for a free trial account.</li>
-						<li>Widely available, Supported in nine languages.</li>
-						<li>If the Simpson's have taught us anything in the IT world, it's how to deal with our cloud
-							vendors...</li>
-					</ul>
-					<ul>
-						<li>Azure UI/UX based on extensive design, usability and accessibility testing.</li>
-					</ul>
-				</aside>
-			</section>
-			<section>
-				<h3>Cautions for Azure API Management</h3>
-				<ul>
-					<li class="fragment">Long-term viability in evolving API Management market</li>
-					<li class="fragment">Does not support hosted on-premise deployments</li>
-					<li class="fragment">Lacks capabilities for later API life cycle stages</li>
-				</ul>
-				<blockquote class="fragment"><span style="font-size: 16px;">Courtesy of: <a
-							href="https://www.gartner.com/doc/reprints?id=1-4Y2SY8F&ct=180501&st=sb">Gartner
-							Reprint</a></span></blockquote>
+							</td>
+							<td class="fragment" data-fragment-index="1" style="vertical-align: top;">
+								<ul style="font-size: 24px;">
+									<li>Long-term viability in evolving API Management market</li>
+									<li>Does not support hosted on-premise deployments</li>
+									<li>Lacks standardized promotion/deployment options</li>
+								</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<p class="fragment" data-fragment-index="1" ><img src="./img/oldman-cloud.jpg" /></p>
 			</section>
 			<section>
 				<h3>Basic Enterprise Integration on Azure</h3>
@@ -416,55 +425,11 @@
 			</section>			
 			<section>
 				<h2>Demos</h2>
-			</section>
-			<section>
-				<h3>API Management Logical View</h3>
-				<img src="./img/APIManagementOverview.png" />
-			</section>			
-			<section>
-				<h3>API Products</h3>
-				<blockquote class="fragment">Collection of API resources presented to Developers as a bundle
-				</blockquote>
-				<div class="fragment">
-					<p>Allows unified management of 1-to-many APIs</p>
-				</div>
-			</section>
-			<section>
-				<h3>Policies</h3>
-				<blockquote class="fragment">Bits of logic that can be executed during the course of processing
-					an API request and response</blockquote>
-				<p class="fragment">Different Levels: Global, Product, API, Operation</p>
-				<div class="fragment">
-					<p>Typically handle the following API capabilities:</p>
-					<ul style="font-size: 60%;">
-						<li>Security</li>
-						<li>Rate-limiting</li>
-						<li>Transformation</li>
-						<li>Mediation</li>
-					</ul>
-				</div>
-			</section>
-			<section>
-				<h1>Demo</h1>
-				<p>(Products & Policies)</p>
-			</section>
-			<section>
-				<h3>API Proxies</h3>
-				<blockquote class="fragment">Set of configurable logic that handles API requests</blockquote>
-				<div class="fragment">
-					<ul>
-						<li>Allows you to protect, augment, manipulate calls to/from backend services</li>
-						<li>Act as managed API facade</li>
-					</ul>
-				</div>
-			</section>
-			<section>
-				<h1>Demo</h1>
-				<ul>
-					<li>API Proxies</li>
-					<li>Developer Portal</li>
-					<li>Security</li>
-					<li>Logging</li>
+				<ul style="font-size: 24px;">
+					<li>API Proxy</li>
+					<li>API Transformation</li>
+					<li>API Orchestration</li>
+					<li>Secure API Products with OAuth2.0</li>
 				</ul>
 			</section>
 			<section>
@@ -477,7 +442,7 @@
 			</section>
 			<section>
 				<h1>Thank You!</h1>
-				<p>Presentation available at: <a href="https://thedevolution.github.io/AzureAPIManagement/">https://thedevolution.github.io/AzureAPIManagement/</a></p>
+				<p>Presentation available at: <a href="https://thedevolution.github.io/AzureAPIManagementLunchLearn/">https://thedevolution.github.io/AzureAPIManagementLunchLearn/</a></p>
 			</section>
 		</div>
 	</div>
