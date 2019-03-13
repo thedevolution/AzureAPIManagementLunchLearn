@@ -127,7 +127,7 @@
 				<h3>API Management Overview</h3>
 				<div class="fragment">
 					<ul>
-						<li>API Facade on top of existing (backend) systems</li>
+						<li>API Facade/Gateway for existing (backend) systems</li>
 					</ul>
 					<table>
 						<tr>
@@ -138,142 +138,11 @@
 								</blockquote>
 							</td>
 							<td style="font-size: 32px;vertical-align: middle;text-align: center;" width="35%"><span
-									class="fragment">Masks complexity & simplifies accessing those underlying systems</span></td>
+									class="fragment">Masks complexity & simplifies accessing those underlying systems/APIs</span></td>
 						</tr>
 					</table>
 				</div>
 			</section>
-			<section>
-				<h3>API Management Use Case</h3>
-				<ul style="font-size: 30px;">
-					<li class="fragment">Proxy is most typical pattern</li>
-				</ul>
-				<p>
-					<table>
-						<tr>
-							<td class="fragment" width="100%"
-								style="font-size: 18px;vertical-align: middle;text-align: center;background-color: whitesmoke;">
-								<img src="https://www.enterpriseintegrationpatterns.com/img/ProxyRequestResponse.png" />
-								<br />
-								Proxy Pattern
-							</td>
-						</tr>
-					</table>
-				</p>
-				<ul style="font-size: 30px;">
-					<li class="fragment">Best for modern (REST/JSON/OpenAPI) services</li>
-				</ul>
-			</section>
-			<section>
-				<h3>API Management Use Case, cont'd</h3>
-				<ul style="font-size: 24px;">
-					<li class="fragment">Legacy APIs/Services can be complex</li>
-					<li class="fragment">Transform (mediate) to modern practices</li>
-				</ul>
-				<p>
-					<table>
-						<tr class="fragment">
-							<td colspan="2"
-								style="font-size: 18px;vertical-align: middle;text-align: right;border: 0px;">
-								<img src="https://www.enterpriseintegrationpatterns.com/img/MessageTranslator.gif" style="max-width: 500px;"/>
-							</td>
-							<td colspan="1"
-								style="font-size: 18px;vertical-align: middle;text-align: left;border: 0px;">
-								Message<br /> Translator<br /> Pattern
-							</td>
-							<td colspan="1"
-								style="font-size: 18px;vertical-align: middle;text-align: left;border: 0px;">
-								Exception<br /> Shielding<br /> Pattern
-							</td>
-							<td colspan="2"
-								style="font-size: 18px;vertical-align: middle;text-align: right;border: 0px;background-color: whitesmoke;">
-								<img src="https://patterns.arcitura.com/wp-content/uploads/2018/09/fig1-68.png" style="max-width: 500px;"/>
-							</td>
-						</tr>
-					</table>
-			</section>
-			<section>
-				<h3>API Management Use Case, cont'd</h3>
-				<ul style="font-size: 24px;">
-					<li>Transformation Example:</li>
-				</ul>
-				<p>
-					<table>						
-						<tr>
-							<td class="fragment" width="27%"
-								style="font-size: 18px;vertical-align: middle;text-align: center;">
-								<img src="./img/dirty-pig-farm-260nw-1012284229.jpg" width="350px" />
-								<br />
-								Legacy SOAP Service <br />(broken WSDL)
-							</td>
-							<td class="fragment" width="9%"
-								style="font-size: 72px;vertical-align: middle;text-align: center;">+</td>
-							<td class="fragment" width="27%"
-								style="font-size: 18px;vertical-align: middle;text-align: center;">
-								<img src="./img/17100.jpg" width="75%" />
-								<br />
-								API Management Mediation
-							</td>
-							<td class="fragment" width="9%"
-								style="font-size: 72px;vertical-align: middle;text-align: center;">=</td>
-							<td class="fragment" width="27%" colspan="2"
-								style="font-size: 18px;vertical-align: middle;text-align: center;">
-								<img src="https://upload.wikimedia.org/wikipedia/en/2/22/MissPiggy.jpg" width="75%" />
-								<br />
-								REST/JSON<br />OpenAPI
-							</td>
-						</tr>
-					</table>
-			</section>			
-			<section>
-				<h3>API Management Use Case, cont'd</h3>
-				<ul style="font-size: 24px;">
-					<li class="fragment">Require data from multiple systems
-						<ul>
-							<li class="fragment">Multiple endpoints/transports/protocols</li>
-						</ul>
-					</li>
-					<li class="fragment">Prefer a single request with multiple (orchestrated/aggregated)<br/> backend requests</li>
-				</ul>
-				<p>
-					<table>
-						<tr>
-							<td class="fragment" width="100%"
-								style="font-size: 18px;vertical-align: middle;text-align: center;background-color: whitesmoke;">
-								<img src="https://www.enterpriseintegrationpatterns.com/img/BroadcastAggregate.gif" />
-								<br />
-								Scatter & Gather Pattern
-							</td>
-						</tr>
-					</table>
-					<aside class="notes">
-					</aside>
-			</section>
-			<section>
-				<h3>API Management Use Case, cont'd</h3>
-				<ul style="font-size: 24px;">
-					<li class="fragment">OAuth2.0
-					</li>
-					<li class="fragment">Token-based access to resources.
-						<ul>
-							<li>Can be on behalf of user or an application</li>
-						</ul>
-					</li>
-				</ul>
-				<p>
-					<table>
-						<tr>
-							<td class="fragment" width="100%"
-								style="font-size: 18px;vertical-align: middle;text-align: center;">
-								<img src="./img/447c445-client_credentials_flow.png" />
-								<br />
-								OAuth2.0 Client Credentials Flow
-							</td>
-						</tr>
-					</table>
-					<aside class="notes">
-					</aside>
-			</section>			
 			<section>
 				<h3>API Management Core Components</h3>
 				<ul style="font-size: 32px;">
@@ -389,7 +258,7 @@
 				<h3>Azure API Management: Pros/Cautions</h3>
 				<table>
 					<thead>
-						<tr>
+						<tr style="font-size: 32px;">
 							<th>Pros</th>
 							<th>Cautions</th>
 						</tr>
@@ -397,10 +266,10 @@
 					<tbody>
 						<tr>
 							<td class="fragment" data-fragment-index="0" style="vertical-align: top;">
-								<ul style="font-size: 24px;">
+								<ul style="font-size: 20px;">
 									<li>Immediate option for Azure organizations</li>
 									<li>Easy learning
-										<ul style="font-size: 24px;">
+										<ul style="font-size: 20px;">
 											<li>Quickly up-and-running</li>
 											<li>Easy UI/UX</li>
 										</ul>
@@ -408,10 +277,11 @@
 								</ul>
 							</td>
 							<td class="fragment" data-fragment-index="1" style="vertical-align: top;">
-								<ul style="font-size: 24px;">
+								<ul style="font-size: 20px;">
 									<li>Long-term viability in evolving API Management market</li>
 									<li>Does not support hosted on-premise deployments</li>
 									<li>Lacks standardized promotion/deployment options</li>
+									<li>Azure is an evolving cloud product (things change a lot)</li>
 								</ul>
 							</td>
 						</tr>
@@ -424,14 +294,157 @@
 				<img src="https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/enterprise-integration/_images/simple-enterprise-integration.png" />
 			</section>			
 			<section>
-				<h2>Demos</h2>
+				<h2>Use Cases/Demos</h2>
 				<ul style="font-size: 24px;">
-					<li>API Proxy</li>
-					<li>API Transformation</li>
-					<li>API Orchestration</li>
-					<li>Secure API Products with OAuth2.0</li>
+					<li>Proxy Pattern</li>
+					<li>Transformation/Mediation (Message Translator Pattern)</li>
+					<li>Orchestration</li>
+					<li>OAuth2.0</li>
 				</ul>
 			</section>
+			<section>
+				<h3>API Management Use Cases</h3>
+				<ul style="font-size: 30px;">
+					<li>Proxy Pattern</li>
+					<li>Most typically used in API Management</li>
+				</ul>
+				<p>
+					<table>
+						<tr>
+							<td class="fragment" width="100%"
+								style="font-size: 18px;vertical-align: middle;text-align: center;background-color: whitesmoke;">
+								<img src="https://www.enterpriseintegrationpatterns.com/img/ProxyRequestResponse.png" />
+								<br />
+								Proxy Pattern
+							</td>
+						</tr>
+					</table>
+				</p>
+				<ul style="font-size: 30px;">
+					<li class="fragment">Best for modern (REST/JSON/OpenAPI) services</li>
+				</ul>
+			</section>
+			<section>
+				<h3>API Management Use Cases, cont'd</h3>
+				<ul style="font-size: 24px;">
+					<li>Transformation/Mediation</li>
+					<li class="fragment" data-fragment-index="0">Legacy APIs/Services can be complex</li>
+					<li class="fragment" data-fragment-index="1">Transform (mediate) to modern practices</li>
+					<li class="fragment" data-fragment-index="1">Encapsulate underlying service details</li>
+				</ul>
+				<p>
+					<table class="fragment">
+						<tr>
+							<td colspan="1"
+								style="font-size: 18px;vertical-align: middle;text-align: right;border: 0px;">
+								<img src="https://www.enterpriseintegrationpatterns.com/img/MessageTranslator.gif" style="max-width: 500px;"/>
+							</td>
+							<td colspan="1"
+								style="font-size: 18px;vertical-align: middle;text-align: right;border: 0px;background-color: whitesmoke;">
+								<img src="https://patterns.arcitura.com/wp-content/uploads/2018/09/fig1-68.png" style="max-width: 500px;"/>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="1"
+								style="font-size: 18px;vertical-align: middle;text-align: center;border: 0px;">
+								Message<br /> Translator<br /> Pattern
+							</td>
+							<td colspan="1"
+								style="font-size: 18px;vertical-align: middle;text-align: center;border: 0px;">
+								Exception<br /> Shielding<br /> Pattern
+							</td>							
+						</tr>
+					</table>
+			</section>
+			<section>
+				<h3>API Management Use Cases, cont'd</h3>
+				<ul style="font-size: 24px;">
+					<li>Transformation Example:</li>
+				</ul>
+				<p>
+					<table>						
+						<tr>
+							<td class="fragment" width="27%"
+								style="font-size: 18px;vertical-align: middle;text-align: center;">
+								<img src="./img/dirty-pig-farm-260nw-1012284229.jpg" width="350px" />
+								<br />
+								Legacy SOAP Service <br />(broken WSDL)
+							</td>
+							<td class="fragment" width="9%"
+								style="font-size: 72px;vertical-align: middle;text-align: center;">+</td>
+							<td class="fragment" width="27%"
+								style="font-size: 18px;vertical-align: middle;text-align: center;">
+								<img src="./img/17100.jpg" width="75%" />
+								<br />
+								API Management Mediation
+							</td>
+							<td class="fragment" width="9%"
+								style="font-size: 72px;vertical-align: middle;text-align: center;">=</td>
+							<td class="fragment" width="27%" colspan="2"
+								style="font-size: 18px;vertical-align: middle;text-align: center;">
+								<img src="https://upload.wikimedia.org/wikipedia/en/2/22/MissPiggy.jpg" width="75%" />
+								<br />
+								REST/JSON<br />OpenAPI
+							</td>
+						</tr>
+					</table>
+			</section>			
+			<section>
+				<h3>API Management Use Cases, cont'd</h3>
+				<ul style="font-size: 24px;">
+					<li>Orchestration</li>
+					<li class="fragment">Require data from multiple systems
+						<ul>
+							<li class="fragment">Multiple endpoints/transports/protocols</li>
+						</ul>
+					</li>
+					<li class="fragment">Prefer a single request with multiple (orchestrated/aggregated)<br/> backend requests</li>
+				</ul>
+				<p>
+					<table class="fragment">
+						<tr>
+							<td width="50%"
+								style="font-size: 18px;vertical-align: middle;text-align: center;background-color: whitesmoke;">
+								<img src="https://www.enterpriseintegrationpatterns.com/img/BroadcastAggregate.gif" />
+								<br />
+								Scatter & Gather Pattern
+							</td>
+							<td width="50%"
+								style="font-size: 18px;vertical-align: middle;text-align: center;">
+								<img src="https://docs.microsoft.com/en-us/azure/architecture/patterns/_images/gateway-aggregation.png" width="60%"/>
+								<br />
+								Gateway Aggregation Pattern
+							</td>
+						</tr>
+					</table>
+					<aside class="notes">
+					</aside>
+			</section>
+			<section>
+				<h3>API Management Use Cases, cont'd</h3>
+				<ul style="font-size: 24px;">
+					<li class="fragment">OAuth2.0
+					</li>
+					<li class="fragment">Token-based access to resources.
+						<ul>
+							<li>Can be on behalf of user or an application</li>
+						</ul>
+					</li>
+				</ul>
+				<p>
+					<table>
+						<tr>
+							<td class="fragment" width="100%"
+								style="font-size: 18px;vertical-align: middle;text-align: center;">
+								<img src="./img/447c445-client_credentials_flow.png" />
+								<br />
+								OAuth2.0 Client Credentials Flow
+							</td>
+						</tr>
+					</table>
+					<aside class="notes">
+					</aside>
+			</section>			
 			<section>
 				<h3>Security - OAuth2</h3>
 				<img src="./img/AzureOAuthSecurity1.png" />
