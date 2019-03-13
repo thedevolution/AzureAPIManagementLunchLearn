@@ -104,7 +104,7 @@
 					<ul>
 						<li>API Management Overview</li>
 						<li>Why Azure API Management?</li>
-						<li>Demo</li>
+						<li>Use Cases/Demos</li>
 						<li>Q&A</li>
 					</ul>
 				</div>
@@ -290,23 +290,23 @@
 				<p class="fragment" data-fragment-index="1" ><img src="./img/oldman-cloud.jpg" /></p>
 			</section>
 			<section>
-				<h3>Basic Enterprise Integration on Azure</h3>
+				<h3>API Management on Azure</h3>
 				<img src="https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/enterprise-integration/_images/simple-enterprise-integration.png" />
 			</section>			
 			<section>
 				<h2>Use Cases/Demos</h2>
 				<ul style="font-size: 24px;">
 					<li>Proxy Pattern</li>
-					<li>Transformation/Mediation (Message Translator Pattern)</li>
+					<li>Transformation/Mediation</li>
 					<li>Orchestration</li>
 					<li>OAuth2.0</li>
 				</ul>
 			</section>
 			<section>
 				<h3>API Management Use Cases</h3>
+				<p>Proxy Pattern</p>
 				<ul style="font-size: 30px;">
-					<li>Proxy Pattern</li>
-					<li>Most typically used in API Management</li>
+					<li class="fragment">Most frequently used pattern</li>
 				</ul>
 				<p>
 					<table>
@@ -326,8 +326,8 @@
 			</section>
 			<section>
 				<h3>API Management Use Cases, cont'd</h3>
+				<p>Transformation/Mediation</p>
 				<ul style="font-size: 24px;">
-					<li>Transformation/Mediation</li>
 					<li class="fragment" data-fragment-index="0">Legacy APIs/Services can be complex</li>
 					<li class="fragment" data-fragment-index="1">Transform (mediate) to modern practices</li>
 					<li class="fragment" data-fragment-index="1">Encapsulate underlying service details</li>
@@ -341,7 +341,7 @@
 							</td>
 							<td colspan="1"
 								style="font-size: 18px;vertical-align: middle;text-align: right;border: 0px;background-color: whitesmoke;">
-								<img src="https://patterns.arcitura.com/wp-content/uploads/2018/09/fig1-68.png" style="max-width: 500px;"/>
+								<img src="https://www.enterpriseintegrationpatterns.com/img/ContentFilter.gif" style="max-width: 500px;"/>
 							</td>
 						</tr>
 						<tr>
@@ -351,7 +351,7 @@
 							</td>
 							<td colspan="1"
 								style="font-size: 18px;vertical-align: middle;text-align: center;border: 0px;">
-								Exception<br /> Shielding<br /> Pattern
+								Content<br /> Filter<br /> Pattern
 							</td>							
 						</tr>
 					</table>
@@ -391,27 +391,31 @@
 			</section>			
 			<section>
 				<h3>API Management Use Cases, cont'd</h3>
+				<p>Orchestration</p>
 				<ul style="font-size: 24px;">
-					<li>Orchestration</li>
 					<li class="fragment">Require data from multiple systems
 						<ul>
 							<li class="fragment">Multiple endpoints/transports/protocols</li>
 						</ul>
 					</li>
-					<li class="fragment">Prefer a single request with multiple (orchestrated/aggregated)<br/> backend requests</li>
+					<li class="fragment">Prefer a single client request/response
+						<ul>
+							<li>Encapsulating and aggregating multiple backend requests</li>
+						</ul>
+					</li>
 				</ul>
 				<p>
 					<table class="fragment">
 						<tr>
 							<td width="50%"
-								style="font-size: 18px;vertical-align: middle;text-align: center;background-color: whitesmoke;">
-								<img src="https://www.enterpriseintegrationpatterns.com/img/BroadcastAggregate.gif" />
+								style="font-size: 18px;vertical-align: middle;text-align: center;background-color: whitesmoke;color: black;">
+								<img src="https://www.enterpriseintegrationpatterns.com/img/BroadcastAggregate.gif" width="85%"/>
 								<br />
 								Scatter & Gather Pattern
 							</td>
 							<td width="50%"
 								style="font-size: 18px;vertical-align: middle;text-align: center;">
-								<img src="https://docs.microsoft.com/en-us/azure/architecture/patterns/_images/gateway-aggregation.png" width="60%"/>
+								<img src="https://docs.microsoft.com/en-us/azure/architecture/patterns/_images/gateway-aggregation.png" width="50%"/>
 								<br />
 								Gateway Aggregation Pattern
 							</td>
@@ -422,9 +426,8 @@
 			</section>
 			<section>
 				<h3>API Management Use Cases, cont'd</h3>
+				<p>OAuth2.0</p>
 				<ul style="font-size: 24px;">
-					<li class="fragment">OAuth2.0
-					</li>
 					<li class="fragment">Token-based access to resources.
 						<ul>
 							<li>Can be on behalf of user or an application</li>
@@ -436,7 +439,7 @@
 						<tr>
 							<td class="fragment" width="100%"
 								style="font-size: 18px;vertical-align: middle;text-align: center;">
-								<img src="./img/447c445-client_credentials_flow.png" />
+								<img src="./img/447c445-client_credentials_flow.png" width="80%"/>
 								<br />
 								OAuth2.0 Client Credentials Flow
 							</td>
