@@ -1,21 +1,22 @@
 <policies>
     <inbound>
         <base />
-        <set-variable name="googleApiKey" value="<<GOOGLE_API_KEY>>"/>
+        <set-variable name="googleApiKey" value="{{GOOGLE_API_KEY}}"/>
+        <set-variable name="zipCodeParameter" value="@(context.Request.OriginalUrl.Query.GetValueOrDefault("zipCode"))" />
         <send-request mode="new" response-variable-name="googleZipCode" timeout="5" ignore-error="true">
-            <set-url>@($"https://maps.googleapis.com/maps/api/geocode/json?address={(string) context.Request.OriginalUrl.Query.GetValueOrDefault("zipCode")}&key={(string) context.Variables["googleApiKey"]}")</set-url>
+            <set-url>@($"https://maps.googleapis.com/maps/api/geocode/json?address={(string) context.Variables["zipCodeParameter"]}&key={(string) context.Variables["googleApiKey"]}")</set-url>
             <set-method>GET</set-method>
         </send-request>
         <set-variable name="jsonZipCodeResponse" value="@(((IResponse)context.Variables["googleZipCode"]).Body.As<JObject>())" />
         <choose>
-            <when condition="@(((JObject)context.Variables["jsonZipCodeResponse"])["results"].Count() == 0)">
+            <when condition="@(((JObject)context.Variables["jsonZipCodeResponse"])["results"].Count() == 0 || (string)((JObject)context.Variables["jsonZipCodeResponse"])["results"][0]["types"][0] != "postal_code")">
                 <return-response>
                     <set-status code="404" reason="Zip Code not found" />
                 </return-response>
             </when>
             <otherwise>
                 <send-request mode="new" response-variable-name="googlePlaces" timeout="5" ignore-error="true">
-                    <set-url>@($"https://maps.googleapis.com/maps/api/place/textsearch/json?query=Craft+beer+in+{(string) context.Request.OriginalUrl.Query.GetValueOrDefault("zipCode")}&key={(string) context.Variables["googleApiKey"]}")</set-url>
+                    <set-url>@($"https://maps.googleapis.com/maps/api/place/textsearch/json?query=Craft+beer+in+{(string) context.Variables["zipCodeParameter"]}&key={(string) context.Variables["googleApiKey"]}&rankby=prominence")</set-url>
                     <set-method>GET</set-method>
                 </send-request>
                 <set-variable name="jsonPlacesResponse" value="@(((IResponse)context.Variables["googlePlaces"]).Body.As<JObject>())" />
