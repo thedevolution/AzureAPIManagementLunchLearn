@@ -1,0 +1,11 @@
+Request:
+application/x-www-form-urlencoded
+client_id=APP_ID&client_secret=SECRET&grant_type=client_credentials&scope=1234
+
+Response
+application/json
+{
+	"access_token": "1234567890abcdefghijklmnopqrstuvwxyz",
+	"token_type": "Bearer",
+	"expires_in": 3600
+}

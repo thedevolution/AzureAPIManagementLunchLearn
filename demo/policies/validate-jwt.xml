@@ -1,0 +1,6 @@
+<validate-jwt header-name="Authorization" failed-validation-httpcode="401" failed-validation-error-message="Unauthorized (TechMKE). Access token is missing or invalid.">
+    <openid-config url="https://login.microsoftonline.com/<<TENANT_ID>>/.well-known/openid-configuration" />
+    <audiences>
+        <audience><<AD_APPLICATION_ID>></audience>
+    </audiences>
+</validate-jwt>

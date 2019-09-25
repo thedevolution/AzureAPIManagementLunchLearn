@@ -1,0 +1,502 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Azure API Management Presentation</title>
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/moon.css" id="theme">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+	<style>
+		.reveal section img {
+			box-shadow: none;
+			border: 0px;
+			background: none;
+		}
+
+		.reveal table {
+			vertical-align: top;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h2 style="text-align: right">Azure</h2>
+				<h2 style="text-align: right">API</h2>
+				<h2 style="text-align: right">Management</h2>
+				<h6 style="text-align: right; color: grey;">Bryan Coller</h6>
+				<h6 style="text-align: right;"><img
+						src="https://www.nvisia.com/hs-fs/hubfs/Evolution-Site-Pictures/Current-NVISIA-Logo-(Orange-Name-R).png?width=187&amp;name=Current-NVISIA-Logo-(Orange-Name-R).png"
+						class="hs-image-widget " style="width:187px;" width="187"
+						sizes="(max-width: 187px) 100vw, 187px" /></h6>
+			</section>
+			<section>
+				<table style="background-color: whitesmoke;width: 75%;margin-bottom: 20px;">
+					<tr>
+						<td style="text-align: center;font-size: 52px;" colspan="2">
+							<h3 style="color: #93a1a1;margin: 0px;">Bryan Coller</h3>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: center;vertical-align: bottom;" colspan="2">
+							<span style="font-size: 24px;">Director @ </span><img
+								src="https://www.nvisia.com/hs-fs/hubfs/Evolution-Site-Pictures/Current-NVISIA-Logo-(Orange-Name-R).png?width=187&amp;name=Current-NVISIA-Logo-(Orange-Name-R).png"
+								class="hs-image-widget " style="width:110px;margin: 0px;" />&nbsp;&nbsp;|&nbsp;&nbsp;
+							<span style="font-size: 24px;color: cornflowerblue;">bcoller@nvisia.com</span>
+						</td>
+					</tr>
+				</table>
+				<table style="background-color: whitesmoke;width: 75%;margin-bottom: 20px;">
+					<tr>
+						<td colspan="2" style="text-align: center;font-size: 24px;padding: 25px;">
+							<h3 style="color: #93a1a1;margin: 0px;">Consulting Experience</h3>
+						</td>
+					</tr>
+					<tr>
+						<td style="width: 50%;font-size: 16px;padding: 25px;color: darkslategray;"><span>Roughly 20
+								years of development industry experience (Java, .NET)</span></td>
+						<td style="width: 50%;font-size: 16px;padding: 25px;color: darkslategray;"><span>Built software
+								for major manufacturing, healthcare and insurance providers in the Milwaukee, Chicago
+								area</span></td>
+					</tr>
+				</table>
+				<table style="background-color: whitesmoke;width: 75%;">
+					<tr>
+						<td colspan="3" style="text-align: center;font-size: 24px;padding: 25px;">
+							<h3 style="color: #93a1a1;margin: 0px;">Relevant Focus Areas</h3>
+						</td>
+					</tr>
+					<tr>
+						<td
+							style="width: 34%;text-align: center;font-size: 16px;padding: 25px;border-bottom: 0px;color: darkslategray;">
+							<span><em>~15 years</em><br />Service-Oriented Architectures</span>
+						<td
+							style="width: 33%;text-align: center;font-size: 16px;padding: 25px;border-bottom: 0px;color: darkslategray;">
+							<span><em>~3 years</em><br />API Management</span></td>
+						<td style="width: 33%;text-align: center;font-size: 16px;padding: 25px;color: darkslategray;">
+							<span><em>~1 year</em><br />Azure</span></td>
+					</tr>
+					<tr>
+
+					</tr>
+				</table>
+			</section>
+			<section>
+				<div style="text-align: left;">
+					<h2>Agenda</h2>
+					<ul>
+						<li>API Management Overview</li>
+						<li>Why Azure API Management?</li>
+						<li>Use Cases/Demos</li>
+						<li>Q&A</li>
+					</ul>
+				</div>
+			</section>
+			<section>
+				<div style="text-align: left;">
+					<h2>Goal</h2>
+					<ul>
+						<li>Demonstrate the capabilities of API Management through the eyes of Azure.</li>
+					</ul>
+				</div>
+			</section>
+			<section>
+				<h2>API Management Overview</h2>
+				<aside class="notes">
+					So why API Management...?
+				</aside>
+			</section>
+			<section>
+				<h3>API Management Overview</h3>
+				<div class="fragment">
+					<ul>
+						<li>API Facade/Gateway for existing (backend) systems</li>
+					</ul>
+					<table>
+						<tr>
+							<td style="vertical-align: middle;text-align: center;" width="65%">
+								<img src="./img/APIFacade.png" />
+								<blockquote><span style="font-size: 16px;">Courtesy of: <a
+											href="https://pages.apigee.com/rs/apigee/images/api-facade-pattern-ebook-2012-06.pdf">Apigee</a></span>
+								</blockquote>
+							</td>
+							<td style="font-size: 32px;vertical-align: middle;text-align: center;" width="35%"><span
+									class="fragment">Masks complexity & simplifies accessing those underlying systems/APIs</span></td>
+						</tr>
+					</table>
+				</div>
+			</section>
+			<section>
+				<h3>API Management Core Components</h3>
+				<ul style="font-size: 32px;">
+					<li class="fragment">Gateway (API Management Runtime)
+						<ul style="font-size: 24px;">
+							<li>Proxy API requests/responses</li>
+							<li>Policies (throttling, security, etc)</li>
+							<li>Products (Bundles of APIs)</li>
+							<li>Transform/Orchestrate requests/responses</li>
+							<li>Handle authentication, authorization</li>
+							<li>Caching and analytics collection</li>
+						</ul>
+					</li>
+					<li class="fragment">Publishing tools (API Administrator)
+						<ul style="font-size: 24px;">
+							<li>Manage API lifecycle (Creation, versioning, revisions, retirement)</li>
+							<li>Managing access and policies</li>
+							<li>Developer testing & debugging</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h3>API Management Core Components, cont'd</h3>
+				<ul style="font-size: 32px;">
+					<li>Developer portal/API store (API Consumer)
+						<ul style="font-size: 24px;">
+							<li>Self-service access to APIs</li>
+							<li>Interactive console for test-driving</li>
+							<li>Ability to subscribe, gain access keys</li>
+						</ul>
+					</li>
+					<li class="fragment">Reporting and analytics (API Administrator/Stakeholder)
+						<ul style="font-size: 24px;">
+							<li>Monitor and report on API usage and loads</li>
+							<li>Raise alerts</li>
+						</ul>
+					</li>
+					<li class="fragment">Monetization (API Stakeholder)
+						<ul style="font-size: 24px;">
+							<li>Charging for API access</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h3>API Management Logical View</h3>
+				<img src="./img/APIManagementOverview.png" />
+			</section>
+			<section>
+				<h2>Why Azure API Management?</h2>
+			</section>
+			<section>
+				<h5>Many API Managment vendors:</h5>
+				<table style="background-color: darkgrey;height: 90%;">
+					<tr>
+						<td style="vertical-align: top;width: 50%;">
+							<table>
+								<tr>
+									<td style="border-bottom: 0px;text-align:center;" colspan="2"><img
+											src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Microsoft_Azure_Logo.svg/640px-Microsoft_Azure_Logo.svg.png"
+											width="150px" /></td>
+								</tr>
+								<tr>
+									<td style="border-bottom: 0px;">
+										<p class="fragment" data-fragment-index="0"><img
+												src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Apigee_logo.svg/320px-Apigee_logo.svg.png"
+												width="150px" /></p>
+									</td>
+									<td style="border-bottom: 0px;">
+										<p class="fragment" data-fragment-index="1"><img
+												src="https://upload.wikimedia.org/wikipedia/en/thumb/e/e2/MuleSoft_logo.svg/640px-MuleSoft_logo.svg.png"
+												width="150px" /></p>
+									</td>
+								</tr>
+								<tr>
+									<td style="border-bottom: 0px;">
+										<p class="fragment" data-fragment-index="0"><img
+												src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/CA_Technologies_logo.svg/289px-CA_Technologies_logo.svg.png"
+												width="150px" /></p>
+
+									</td>
+									<td style="border-bottom: 0px;">
+										<p class="fragment" data-fragment-index="1"><img
+												src="https://upload.wikimedia.org/wikipedia/en/5/56/WSO2_Software_Logo.png"
+												width="150px" /></p>
+									</td>
+								</tr>
+								<tr>
+
+									<td style="border-bottom: 0px;">
+										<p class="fragment" data-fragment-index="0"><img
+												src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/320px-IBM_logo.svg.png"
+												width="150px" /></p>
+
+									</td>
+									<td style="border-bottom: 0px;">
+										<p class="fragment" data-fragment-index="1"><img
+												src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/320px-Amazon_Web_Services_Logo.svg.png"
+												width="150px" /></p>
+									</td>
+								</tr>
+							</table>
+						</td>
+						<td style="vertical-align: top;width: 50%;">
+							<p class="fragment" data-fragment-index="4"><img src="./img/GartnerMagicQuad.png"
+									width="550px" style="max-width: none;" /></p>
+						</td>
+					</tr>
+				</table>
+			</section>
+			<section>
+				<h3>Azure API Management: Pros/Cautions</h3>
+				<table>
+					<thead>
+						<tr style="font-size: 32px;">
+							<th>Pros</th>
+							<th>Cautions</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="fragment" data-fragment-index="0" style="vertical-align: top;">
+								<ul style="font-size: 20px;">
+									<li>Immediate option for Azure organizations</li>
+									<li>Easy learning
+										<ul style="font-size: 20px;">
+											<li>Quickly up-and-running</li>
+											<li>Easy UI/UX</li>
+										</ul>
+									</li>
+								</ul>
+							</td>
+							<td class="fragment" data-fragment-index="1" style="vertical-align: top;">
+								<ul style="font-size: 20px;">
+									<li>Long-term viability in evolving API Management market</li>
+									<li>Does not support hosted on-premise deployments</li>
+									<li>Lacks standardized promotion/deployment options</li>
+									<li>Azure is an evolving cloud product (things change a lot)</li>
+								</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<p class="fragment" data-fragment-index="1" ><img src="./img/oldman-cloud.jpg" /></p>
+			</section>
+			<section>
+				<h3>API Management on Azure</h3>
+				<img src="https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/enterprise-integration/_images/simple-enterprise-integration.png" />
+			</section>			
+			<section>
+				<h2>Use Cases/Demos</h2>
+				<ul style="font-size: 24px;">
+					<li>Proxy Pattern</li>
+					<li>Transformation/Mediation</li>
+					<li>Orchestration</li>
+					<li>OAuth2.0</li>
+				</ul>
+			</section>
+			<section>
+				<h3>API Management Use Cases</h3>
+				<p>Proxy Pattern</p>
+				<ul style="font-size: 30px;">
+					<li class="fragment">Most frequently used pattern</li>
+				</ul>
+				<p>
+					<table>
+						<tr>
+							<td class="fragment" width="100%"
+								style="font-size: 18px;vertical-align: middle;text-align: center;background-color: whitesmoke;">
+								<img src="https://www.enterpriseintegrationpatterns.com/img/ProxyRequestResponse.png" />
+								<br />
+								Proxy Pattern
+							</td>
+						</tr>
+					</table>
+				</p>
+				<ul style="font-size: 30px;">
+					<li class="fragment">Best for modern (REST/JSON/OpenAPI) services</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Demo</h2>
+				<p>Proxy using REST/JSON via OpenAPI/Swagger</p>
+			</section>
+			<section>
+				<h3>API Management Use Cases, cont'd</h3>
+				<p>Transformation/Mediation</p>
+				<ul style="font-size: 24px;">
+					<li class="fragment" data-fragment-index="0">Legacy APIs/Services can be complex</li>
+					<li class="fragment" data-fragment-index="1">Transform (mediate) to modern practices</li>
+					<li class="fragment" data-fragment-index="1">Encapsulate underlying service details</li>
+				</ul>
+				<p>
+					<table class="fragment">
+						<tr>
+							<td colspan="1"
+								style="font-size: 18px;vertical-align: middle;text-align: right;border: 0px;">
+								<img src="https://www.enterpriseintegrationpatterns.com/img/MessageTranslator.gif" style="max-width: 500px;"/>
+							</td>
+							<td colspan="1"
+								style="font-size: 18px;vertical-align: middle;text-align: right;border: 0px;background-color: whitesmoke;">
+								<img src="https://www.enterpriseintegrationpatterns.com/img/ContentFilter.gif" style="max-width: 500px;"/>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="1"
+								style="font-size: 18px;vertical-align: middle;text-align: center;border: 0px;">
+								Message<br /> Translator<br /> Pattern
+							</td>
+							<td colspan="1"
+								style="font-size: 18px;vertical-align: middle;text-align: center;border: 0px;">
+								Content<br /> Filter<br /> Pattern
+							</td>							
+						</tr>
+					</table>
+			</section>
+			<section>
+				<h3>API Management Use Cases, cont'd</h3>
+				<ul style="font-size: 24px;">
+					<li>Transformation Example:</li>
+				</ul>
+				<p>
+					<table>						
+						<tr>
+							<td class="fragment" width="27%"
+								style="font-size: 18px;vertical-align: middle;text-align: center;">
+								<img src="./img/dirty-pig-farm-260nw-1012284229.jpg" width="350px" />
+								<br />
+								Legacy SOAP Service <br />(broken WSDL?)
+							</td>
+							<td class="fragment" width="9%"
+								style="font-size: 72px;vertical-align: middle;text-align: center;">+</td>
+							<td class="fragment" width="27%"
+								style="font-size: 18px;vertical-align: middle;text-align: center;">
+								<img src="./img/17100.jpg" width="75%" />
+								<br />
+								API Management Mediation
+							</td>
+							<td class="fragment" width="9%"
+								style="font-size: 72px;vertical-align: middle;text-align: center;">=</td>
+							<td class="fragment" width="27%" colspan="2"
+								style="font-size: 18px;vertical-align: middle;text-align: center;">
+								<img src="https://upload.wikimedia.org/wikipedia/en/2/22/MissPiggy.jpg" width="75%" />
+								<br />
+								REST/JSON<br />OpenAPI
+							</td>
+						</tr>
+					</table>
+			</section>
+			<section>
+				<h2>Demo</h2>
+				<p>Transformation from SOAP/WSDL to REST/JSON/OpenAPI</p>
+			</section>
+			<section>
+				<h3>API Management Use Cases, cont'd</h3>
+				<p>Orchestration</p>
+				<ul style="font-size: 24px;">
+					<li class="fragment">Require data from multiple systems
+						<ul>
+							<li class="fragment">Multiple endpoints/transports/protocols</li>
+						</ul>
+					</li>
+					<li class="fragment">Prefer a single client request/response
+						<ul>
+							<li>Encapsulating and aggregating multiple backend requests</li>
+						</ul>
+					</li>
+				</ul>
+				<p>
+					<table class="fragment">
+						<tr>
+							<td width="50%"
+								style="font-size: 18px;vertical-align: middle;text-align: center;background-color: whitesmoke;color: black;">
+								<img src="https://www.enterpriseintegrationpatterns.com/img/BroadcastAggregate.gif" width="85%"/>
+								<br />
+								Scatter & Gather Pattern
+							</td>
+							<td width="50%"
+								style="font-size: 18px;vertical-align: middle;text-align: center;">
+								<img src="https://docs.microsoft.com/en-us/azure/architecture/patterns/_images/gateway-aggregation.png" width="50%"/>
+								<br />
+								Gateway Aggregation Pattern
+							</td>
+						</tr>
+					</table>
+					<aside class="notes">
+					</aside>
+			</section>
+			<section>
+				<h2>Demo</h2>
+				<p>Multiple aggregated backend (Google Maps) calls</p>
+			</section>
+			<section>
+				<h3>API Management Use Cases, cont'd</h3>
+				<p>OAuth2.0</p>
+				<ul style="font-size: 24px;">
+					<li class="fragment">Token-based access to resources.
+						<ul>
+							<li>Can be on behalf of user or an application</li>
+						</ul>
+					</li>
+				</ul>
+				<p>
+					<table>
+						<tr>
+							<td class="fragment" width="100%"
+								style="font-size: 18px;vertical-align: middle;text-align: center;">
+								<img src="./img/447c445-client_credentials_flow.png" width="80%"/>
+								<br />
+								OAuth2.0 Client Credentials Flow
+							</td>
+						</tr>
+					</table>
+					<aside class="notes">
+					</aside>
+			</section>
+			<section>
+				<h3>OAuth2.0 using Azure Active Directory</h3>
+				<img src="./img/AzureOAuthSecurity1.png" />
+			</section>
+			<section>
+				<h2>Demo</h2>
+				<p>Create an OAuth2.0 Client Credentials Proxy</p>
+				<p>Validate JWT Token</p>
+			</section>			
+			<section>
+				<h3>API Management DevOps Recommendation</h3>
+				<img src="https://github.com/Azure/azure-api-management-devops-resource-kit/raw/master/APIM-DevOps.png" />
+			</section>
+			<section>
+				<h1>Thank You!</h1>
+				<p>Presentation available at: <a href="https://thedevolution.github.io/AzureAPIManagementLunchLearn/">https://thedevolution.github.io/AzureAPIManagementLunchLearn/</a></p>
+			</section>
+		</div>
+	</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			dependencies: [
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/zoom-js/zoom.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+			]
+		});
+	</script>
+</body>
+
+</html>
