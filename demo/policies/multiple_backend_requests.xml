@@ -1,7 +1,7 @@
 <policies>
     <inbound>
         <base />
-        <set-variable name="googleApiKey" value="{{GOOGLE_API_KEY}}"/>
+        <set-variable name="googleApiKey" value="{{GoogleApiKey}}"/>
         <set-variable name="zipCodeParameter" value="@(context.Request.OriginalUrl.Query.GetValueOrDefault("zipCode"))" />
         <send-request mode="new" response-variable-name="googleZipCode" timeout="5" ignore-error="true">
             <set-url>@($"https://maps.googleapis.com/maps/api/geocode/json?address={(string) context.Variables["zipCodeParameter"]}&key={(string) context.Variables["googleApiKey"]}")</set-url>

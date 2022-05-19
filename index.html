@@ -124,6 +124,19 @@
 				</div>
 			</section>
 			<section>
+				<h2>The Amazon "Service Mandate"</h2>
+				<ul style="font-size: 24px;">
+					<li>All teams will henceforth expose their data and functionality through service interfaces.</li>
+					<li>Teams must communicate with each other through these interfaces.</li>
+					<li>There will be no other form of interprocess communication allowed: no direct linking, no direct reads of another team’s data store, no shared-memory model, no back-doors whatsoever. The only communication allowed is via service interface calls over the network.</li>
+					<li>It doesn’t matter what technology they use. HTTP, Corba, Pubsub, custom protocols — doesn’t matter.</li>
+					<li>All service interfaces, without exception, must be designed from the ground up to be externalizable. That is to say, the team must plan and design to be able to expose the interface to developers in the outside world. No exceptions.</li>
+					<li>Anyone who doesn’t do this will be fired.</li>
+					<li>Thank you; have a nice day!</li>
+					<!--<li>OAuth2.0</li>-->
+				</ul>
+			</section>
+			<section>
 				<h2>API Management Overview</h2>
 				<aside class="notes">
 					So why API Management...?
